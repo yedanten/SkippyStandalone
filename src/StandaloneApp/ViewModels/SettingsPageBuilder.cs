@@ -109,7 +109,7 @@ public static class SettingsPageBuilder
                     + "Side Note: You can enable this option mid-run if you forgot beforehand and it will start skipping cutscenes after you enable it "
                     + "(though it will not skip a cutscene you're currently viewing).",
             Notice = autoParty
-                ? "Auto-Party Mode is currently active - this section is managed automatically and cannot be edited manually.\n\n"
+                ? "Auto-Party Mode is enabled - this section is managed automatically and cannot be edited manually.\n\n"
                   + "Disable Auto-Party Mode in the Auto-Party Mode category to regain control and be able to pick options here."
                 : null,
             NoticeColor = "#A6A666",
@@ -539,4 +539,5 @@ public static class SettingsPageBuilder
         };
     }
 }
+
 

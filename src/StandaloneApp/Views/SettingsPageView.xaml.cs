@@ -16,7 +16,7 @@ public partial class SettingsPageView : UserControl
         this.host = host;
         this.InitializeComponent();
 
-        var autoParty = host.Coordination.AutoParty.Active;
+        var autoParty = host.Config.AutoEnable4Man;
         var model = SettingsPageBuilder.Build(category, host, autoParty);
 
         this.BuildPage(model);
@@ -230,5 +230,6 @@ public partial class SettingsPageView : UserControl
         return block;
     }
 }
+
 
 

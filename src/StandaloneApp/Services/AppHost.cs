@@ -266,7 +266,12 @@ public sealed class AppHost : IDisposable
     public void NotifyConfigChanged()
     {
         this.SaveConfig();
-        this.Coordinator.Evaluate(this.Config, this.Snapshot.ToContext());
+
+        // 立即重新计算并下发，避免用户切换开关后要等下一个 tick。
+        var coordination = this.Coordinator.Evaluate(this.Config, this.Snapshot.ToContext());
+        this.Coordination = coordination;
+        this.Channel.WriteDecision(coordination.Decision, this.Config.IsEnabled, this.Config.ResearchExtraLogs);
+
         this.ConfigChanged?.Invoke();
         this.RaiseStateChanged();
     }

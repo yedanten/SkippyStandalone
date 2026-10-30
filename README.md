@@ -141,7 +141,7 @@ src/
     ├── Services/           AppHost（组合根）、GameMonitor（注入与日志）
     └── Themes/             深色 ImGui 风格主题
 
-tests/Skippy.Core.Tests/    49 个单元测试
+tests/Skippy.Core.Tests/    52 个单元测试
 tools/
 ├── build.ps1               一键构建
 ├── SignatureProbe/         离线签名验证
@@ -192,3 +192,4 @@ third_party/minhook/        MinHook（BSD-2-Clause，vendored）
 - 原插件 Skippy：AGPL-3.0-or-later（Copyright Boxu）
 - 本移植：AGPL-3.0-or-later
 - MinHook：BSD-2-Clause（`third_party/minhook/LICENSE.txt`）
+
