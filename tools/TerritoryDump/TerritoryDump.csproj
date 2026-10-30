@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>TerritoryDump</AssemblyName>
+    <RootNamespace>Skippy.Tools.TerritoryDump</RootNamespace>
+
+    <!-- 指向包含 Lumina.dll / Lumina.Excel.dll 的目录（默认使用 Dalamud 安装目录）。 -->
+    <LuminaDirectory Condition="'$(LuminaDirectory)' == ''">$(APPDATA)\XIVLauncherCN\addon\Hooks\dev</LuminaDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Lumina">
+      <HintPath>$(LuminaDirectory)\Lumina.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Lumina.Excel">
+      <HintPath>$(LuminaDirectory)\Lumina.Excel.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

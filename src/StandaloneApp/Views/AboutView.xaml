@@ -1,0 +1,66 @@
+<UserControl x:Class="Skippy.App.Views.AboutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="20,14,20,28" MaxWidth="780" HorizontalAlignment="Center">
+
+            <TextBlock Text="Skippy" Style="{StaticResource PageTitleText}" />
+            <Separator Style="{StaticResource SeparatorLine}" />
+
+            <TextBlock Style="{StaticResource BodyText}" TextAlignment="Center"
+                       Text="Standalone port of the Skippy Dalamud plugin, targeting FFXIV 7.57 (2026.10.06)." />
+
+            <TextBlock Style="{StaticResource BodyText}" TextAlignment="Center" Margin="0,4,0,14"
+                       Text="So that you never have to hear Gaius yap again." FontStyle="Italic" />
+
+            <TextBlock Style="{StaticResource BodyText}"
+                       Text="Are you tired of having to go through Main Scenario Roulettes while just sitting there, having to read all of that yap from NPCs that doesn't especially matter for the 1,000,000,000th time? You've come to the right place." />
+
+            <TextBlock Style="{StaticResource BodyText}"
+                       Text="Skippy skips those &quot;unskippable&quot; cutscenes. However, if you queue with Skippy enabled while even one member of your party doesn't have it active, you will end up waiting in the starting area until they are done — exactly like the game's own ready check." />
+
+            <Border Margin="0,12,0,14"
+                    CornerRadius="4"
+                    BorderBrush="{StaticResource BorderBrush}"
+                    BorderThickness="1"
+                    ClipToBounds="True"
+                    HorizontalAlignment="Center">
+                <Image Source="/Assets/praetorium.gif" Stretch="Uniform" MaxHeight="260" />
+            </Border>
+
+            <TextBlock Text="Skip Categories" Style="{StaticResource SectionTitleText}" Margin="0,8,0,4" />
+            <Separator Style="{StaticResource SeparatorLine}" />
+
+            <TextBlock Style="{StaticResource BodyText}"
+                       Text="• MSQ Roulette — Castrum Meridianum, The Praetorium, Porta Decumana.&#10;• Large-Scale Content — Variant / Deep Dungeons and Cosmic Exploration.&#10;• Gold Saucer — Chocobo Racing, Lord of Verminion, Triple Triad, Fall Guys, Air Force One, Mahjong, Keybound Brawler.&#10;• NPC Dialogue Cutscenes — quest NPCs, housing, submarine workshop.&#10;• World &amp; Quest Cutscenes — overworld story scenes and scripted events.&#10;• Feed Buddy Scene — companion feeding animation.&#10;• Behaviour — opt-in first-time cutscene skipping." />
+
+            <TextBlock Text="Risky Skips" Style="{StaticResource SectionTitleText}" Margin="0,18,0,4" />
+            <Separator Style="{StaticResource SeparatorLine}" />
+
+            <TextBlock Style="{StaticResource BodyText}"
+                       Text="Ocean Fishing, Crystalline Conflict and the Inn login sequence are available but disabled by default. They are experimental and carry a ban risk — enable them only if you accept full responsibility." />
+
+            <TextBlock Text="How the port works" Style="{StaticResource SectionTitleText}" Margin="0,18,0,4" />
+            <Separator Style="{StaticResource SeparatorLine}" />
+
+            <TextBlock Style="{StaticResource BodyText}"
+                       Text="The standalone build ships a small native component (Skippy.Native.dll) that is injected into ffxiv_dx11.exe, mirroring Dalamud's loader. It applies the same two instruction patches and inline hooks used by the original plugin, while this window handles configuration, decisions and logging. When the window closes or the game exits, the native component restores the original game memory and unloads its hooks." />
+
+            <Border Margin="0,18,0,0"
+                    Background="#22141428"
+                    BorderBrush="{StaticResource BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="4"
+                    Padding="14,10">
+                <StackPanel>
+                    <TextBlock Text="Credits" FontWeight="SemiBold" Foreground="{StaticResource AccentBrush}" FontSize="13" Margin="0,0,0,6" />
+                    <TextBlock Style="{StaticResource MutedText}"
+                               Text="Original plugin: Boxu (AGPL-3.0-or-later). Standalone port: built on top of the original source, Dalamud and FFXIVClientStructs signatures. Hooking via MinHook (BSD-2-Clause)." />
+                    <TextBlock Style="{StaticResource MutedText}" Margin="0,8,0,0" Text="Support the original author: https://ko-fi.com/boxu_chan" />
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

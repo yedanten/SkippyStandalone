@@ -1,0 +1,57 @@
+<UserControl x:Class="Skippy.App.Views.LoggerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="20,14,20,28" MaxWidth="780" HorizontalAlignment="Center">
+
+            <TextBlock Text="Log Export" Style="{StaticResource PageTitleText}" />
+            <Separator Style="{StaticResource SeparatorLine}" />
+
+            <TextBlock Style="{StaticResource BodyText}"
+                       Text="This section quickly allows you to export the Skippy log file to your Desktop for troubleshooting. You may then send this file to the developer when reporting issues, so that any log message that may help can be looked into." />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,18,0,10">
+                <Button x:Name="ExportButton" Style="{StaticResource PrimaryButton}" Click="OnExportClick">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xE7C3;" FontFamily="{StaticResource IconFont}" VerticalAlignment="Center" Margin="0,0,8,0" />
+                        <TextBlock Text="Export Skippy Log" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="ContactButton" Style="{StaticResource GhostButton}" Margin="18,0,0,0" Click="OnContactClick">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="&#xE8BD;" FontFamily="{StaticResource IconFont}" VerticalAlignment="Center" Margin="0,0,8,0" />
+                        <TextBlock Text="Contact @Boxu" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <TextBlock x:Name="LogPathText" Style="{StaticResource MutedText}"
+                       TextAlignment="Center" Margin="0,0,0,8" />
+
+            <TextBlock Text="Your User ID" Style="{StaticResource SectionTitleText}" Margin="0,18,0,4" />
+            <Separator Style="{StaticResource SeparatorLine}" />
+
+            <TextBlock Style="{StaticResource BodyText}"
+                       Text="Your User ID is an anonymous identifier derived from your account. It is never transmitted in a way that could identify you; it only goes one way, like a fingerprint without a face.&#10;&#10;If you experience a bug and want to report it, please copy your User ID and send it to @Boxu. This lets the developer find your entries in the research log without knowing who you are in-game." />
+
+            <TextBlock x:Name="UserIdText" Style="{StaticResource MutedText}" TextAlignment="Center"
+                       FontFamily="Consolas" FontSize="13" Margin="0,10,0,10" />
+
+            <Button x:Name="CopyIdButton" Style="{StaticResource PrimaryButton}" HorizontalAlignment="Center" Click="OnCopyIdClick">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="&#xE8C8;" FontFamily="{StaticResource IconFont}" VerticalAlignment="Center" Margin="0,0,8,0" />
+                    <TextBlock Text="Copy User ID to Clipboard" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+
+            <TextBlock Text="Cutscene Research" Style="{StaticResource SectionTitleText}" Margin="0,26,0,4" />
+            <Separator Style="{StaticResource SeparatorLine}" />
+
+            <TextBlock Style="{StaticResource MutedText}"
+                       Text="Whenever you enable a global skip in any of the categories Skippy offers and you encounter a cutscene, Skippy will automatically log the territory ID, zone name, and content type to the research sheet used for future exemption mapping.&#10;&#10;The only personal data included is your anonymous User ID above — no character name, no server, no identifying information." />
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,85 @@
+<UserControl x:Class="Skippy.App.Views.CommandsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="20,14,20,28" MaxWidth="780" HorizontalAlignment="Center">
+
+            <TextBlock Text="Commands" Style="{StaticResource PageTitleText}" />
+            <Separator Style="{StaticResource SeparatorLine}" />
+
+            <TextBlock Style="{StaticResource BodyText}"
+                       Text="独立版运行在游戏之外，因此原插件的 /skippy 聊天命令在这里对应为下面的界面操作。所有功能都可以在窗口内完成。" />
+
+            <Border Margin="0,16,0,0"
+                    BorderBrush="{StaticResource BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="4"
+                    Background="#33141428">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="190" />
+                        <ColumnDefinition Width="220" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" Grid.ColumnSpan="3" Background="#FF1B1B38">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190" />
+                                <ColumnDefinition Width="220" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="操作" Style="{StaticResource MutedText}" VerticalAlignment="Center" Margin="10,0" FontWeight="SemiBold" />
+                            <TextBlock Grid.Column="1" Text="位置" Style="{StaticResource MutedText}" VerticalAlignment="Center" Margin="10,0" FontWeight="SemiBold" />
+                            <TextBlock Grid.Column="2" Text="说明" Style="{StaticResource MutedText}" VerticalAlignment="Center" Margin="10,0" FontWeight="SemiBold" />
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.ColumnSpan="3" Height="1" Background="#33333366" VerticalAlignment="Bottom" />
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="启用 / 禁用" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="左上角角色头像" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="点击头像即可切换总开关；禁用后原生组件会立即恢复游戏原始状态。" Style="{StaticResource BodyText}" Margin="10,9" />
+
+                    <Border Grid.Row="2" Grid.ColumnSpan="3" Height="1" Background="#33333366" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="切换分类" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="左侧导航栏" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="对应原插件 /skippy 打开的设置窗口中的各个分类页面。" Style="{StaticResource BodyText}" Margin="10,9" />
+
+                    <Border Grid.Row="3" Grid.ColumnSpan="3" Height="1" Background="#33333366" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="导出日志" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="Logger 页面" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="3" Grid.Column="2" Text="对应 /skippy log；直接把日志文件复制到桌面。" Style="{StaticResource BodyText}" Margin="10,9" />
+
+                    <Border Grid.Row="4" Grid.ColumnSpan="3" Height="1" Background="#33333366" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="查看地域信息" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="窗口底部状态栏" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="4" Grid.Column="2" Text="对应 /skippy territory；显示 TerritoryType ID、IntendedUse 与当前跳过类别。" Style="{StaticResource BodyText}" Margin="10,9" />
+
+                    <Border Grid.Row="5" Grid.ColumnSpan="3" Height="1" Background="#33333366" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="匿名 User ID" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="5" Grid.Column="1" Text="Logger 页面" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="5" Grid.Column="2" Text="对应 /skippy user；复制后可在反馈问题时交给开发者定位日志。" Style="{StaticResource BodyText}" Margin="10,9" />
+
+                    <Border Grid.Row="6" Grid.ColumnSpan="3" Height="1" Background="#33333366" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="开发者模式" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="6" Grid.Column="1" Text="标题栏齿轮按钮" Style="{StaticResource BodyText}" Margin="10,9" />
+                    <TextBlock Grid.Row="6" Grid.Column="2" Text="需要作者提供的密码；解锁后可测试各个独立签名 hook。" Style="{StaticResource BodyText}" Margin="10,9" />
+                </Grid>
+            </Border>
+
+            <TextBlock Style="{StaticResource MutedText}" Margin="0,16,0,0"
+                       Text="提示：Auto-Party Mode 会在进入 MSQ 副本时自动管理 MSQ 跳过，无需手动切换开关。若需要手动控制，请先关闭 Auto-Party Mode。" />
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

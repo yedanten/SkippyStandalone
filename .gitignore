@@ -1,0 +1,23 @@
+# 参考资料（不属于移植工程，不纳入版本管理）
+/Dalamud/
+/Skippy/
+/2.2.5.0/
+/现有插件界面截图/
+
+# 构建产物
+bin/
+obj/
+artifacts/
+/.vs/
+*.user
+*.suo
+
+# 由构建脚本生成的原生组件（正式产物见 Release/StandaloneApp.exe）
+/src/StandaloneApp/Assets/native/*.dll
+
+# 交付的二进制文件
+/Release/StandaloneApp.exe
+
+# 本地工具/临时文件
+/.scratch/
+*.log

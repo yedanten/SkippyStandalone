@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <AssemblyName>StandaloneApp</AssemblyName>
+    <RootNamespace>Skippy.App</RootNamespace>
+
+    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+    <Version>2.2.5.0</Version>
+    <AssemblyVersion>2.2.5.0</AssemblyVersion>
+    <FileVersion>2.2.5.0</FileVersion>
+    <Product>Skippy</Product>
+    <Description>Standalone port of the Skippy Dalamud plugin for FINAL FANTASY XIV.</Description>
+    <Company>Boxu / standalone port</Company>
+    <Copyright>© Boxu - 2026 | Standalone v2.2.5.0</Copyright>
+
+    <SatelliteResourceLanguages>zh-Hans</SatelliteResourceLanguages>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Skippy.Core\Skippy.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\icon.png" />
+    <Resource Include="Assets\badge.png" />
+    <Resource Include="Assets\badge_grey.png" />
+    <Resource Include="Assets\praetorium.gif" />
+    <Resource Include="Assets\gaius.png" />
+    <EmbeddedResource Include="Assets\README.md" LogicalName="Skippy.App.Assets.README.md" />
+    <EmbeddedResource Include="Assets\native\Skippy.Native.dll"
+                      LogicalName="Skippy.Native.dll"
+                      Condition="Exists('$(MSBuildProjectDirectory)\Assets\native\Skippy.Native.dll')" />
+  </ItemGroup>
+
+</Project>

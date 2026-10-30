@@ -1,0 +1,74 @@
+<Window x:Class="Skippy.App.Dialogs.DevModeDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Developer Mode"
+        Width="480"
+        SizeToContent="Height"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        FontFamily="{StaticResource AppFont}"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False">
+
+    <Border Background="{StaticResource WindowBg}"
+            BorderBrush="#FF3A3A6E"
+            BorderThickness="1"
+            CornerRadius="6"
+            Margin="12">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="18" ShadowDepth="0" Opacity="0.55" Color="Black" />
+        </Border.Effect>
+
+        <StackPanel>
+            <Grid Height="38" Background="{StaticResource TitleBarBg}" MouseLeftButtonDown="OnHeaderDrag">
+                <TextBlock Text="Developer Mode"
+                           VerticalAlignment="Center"
+                           Margin="14,0,0,0"
+                           FontSize="13"
+                           Foreground="{StaticResource AccentBrush}" />
+                <Button Content="&#xE8BB;"
+                        Style="{StaticResource TitleBarButton}"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,6,0"
+                        Click="OnCancelClick" />
+            </Grid>
+
+            <StackPanel Margin="18,14,18,18">
+                <TextBlock Style="{StaticResource BodyText}"
+                           Text="This restricted mode is reserved for the developer and authorized contributors assisting with signature hooks.&#10;&#10;Warning: this menu contains isolated hooks that bypass all standard exemptions. They are dangerous if used incorrectly, so all hooks are toggled off by default and are locked behind authorization." />
+
+                <TextBlock Style="{StaticResource BodyText}" Margin="0,10,0,4" Text="Password:" />
+
+                <PasswordBox x:Name="PasswordInput"
+                             Height="32"
+                             Background="#FF141428"
+                             Foreground="{StaticResource TextBrush}"
+                             BorderBrush="{StaticResource BorderBrush}"
+                             BorderThickness="1"
+                             Padding="8,4"
+                             FontSize="13"
+                             KeyDown="OnPasswordKeyDown" />
+
+                <TextBlock x:Name="StatusText"
+                           Style="{StaticResource MutedText}"
+                           Margin="0,8,0,0"
+                           Visibility="Collapsed" />
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+                    <Button Content="Cancel"
+                            Style="{StaticResource GhostButton}"
+                            Width="120"
+                            Click="OnCancelClick" />
+                    <Button x:Name="ConfirmButton"
+                            Content="Confirm"
+                            Style="{StaticResource PrimaryButton}"
+                            Width="150"
+                            Margin="12,0,0,0"
+                            Click="OnConfirmClick" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

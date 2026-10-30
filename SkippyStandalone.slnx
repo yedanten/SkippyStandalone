@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Skippy.Core/Skippy.Core.csproj" />
+    <Project Path="src/StandaloneApp/StandaloneApp.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Skippy.Core.Tests/Skippy.Core.Tests.csproj" />
+  </Folder>
+</Solution>
