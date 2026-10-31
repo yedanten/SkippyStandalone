@@ -12,20 +12,18 @@
 - **Risky Skips**（默认关闭）：海钓、水晶冲突、旅馆登录序列
 - **Auto-Party Mode**：进入 MSQ 副本时自动启用，离开后自动关闭
 - **首次观看保护**：可选择全局关闭（Behaviour 页）
-- 配置自动导入、日志一键导出、匿名 User ID、开发者研究模式
+- 默认不启用任何跳过类别、日志一键导出、匿名 User ID、开发者研究模式
 
 ## 使用
 
 1. 先正常启动游戏（通过 XIVLauncher 等）。
 2. 运行 `StandaloneApp.exe`（无需安装，双击即可）。
 3. 程序检测到 `ffxiv_dx11.exe` 后会自动注入；窗口底部显示 `已连接` 与当前地域。
-4. 左上角角色头像 = 总开关；左侧导航切换各分类。
+4. 左上角角色头像 = 总开关；左侧导航切换各分类，勾选需要的跳过类别。
 5. 关闭窗口即退出。原生组件会自动把游戏内存恢复为原始状态（最长 5 秒）。
 
-配置文件：`%APPDATA%\SkippyStandalone\config.json`
+配置文件：`%APPDATA%\SkippyStandalone\config.json`（只读写这一份配置；首次运行不继承 Dalamud 插件设置）
 日志目录：`%LOCALAPPDATA%\SkippyStandalone\logs\`
-
-> 首次启动会自动导入原 Dalamud 插件的 `%APPDATA%\XIVLauncherCN\pluginConfigs\Skippy.json`。
 
 ## 系统要求
 

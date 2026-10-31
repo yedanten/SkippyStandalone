@@ -21,9 +21,9 @@ public class SkipDecisionEngineTests
         new(territory, use, workshop, 0, party);
 
     [Fact]
-    public void DefaultConfig_SkipsAllThreeMsqInstances()
+    public void MsqSkipAll_SkipsAllThreeMsqInstances()
     {
-        var config = Config();
+        var config = Config(c => c.SkipMSQRoulette = true);
 
         foreach (var (territory, name) in new[]
                  {
@@ -46,7 +46,11 @@ public class SkipDecisionEngineTests
     [Fact]
     public void MsqExemption_OnlyAffectsConfiguredInstance()
     {
-        var config = Config(c => c.ExemptPrae = true);
+        var config = Config(c =>
+        {
+            c.SkipMSQRoulette = true;
+            c.ExemptPrae = true;
+        });
 
         Assert.False(SkipDecisionEngine.Evaluate(config, Ctx(Praetorium, TerritoryIntendedUse.Dungeon)).ContentDirector.Skip);
         Assert.True(SkipDecisionEngine.Evaluate(config, Ctx(Castrum, TerritoryIntendedUse.Dungeon)).ContentDirector.Skip);
@@ -301,3 +305,4 @@ public class SkipDecisionEngineTests
         Assert.False(decision.CustomTalk.Skip);
     }
 }
+

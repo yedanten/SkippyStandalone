@@ -17,7 +17,7 @@ public sealed class SkippyConfig
     public bool IsEnabled { get; set; } = true;
 
     // ── MSQ Roulette ───────────────────────────────────────────────────────
-    public bool SkipMSQRoulette { get; set; } = true;
+    public bool SkipMSQRoulette { get; set; }
     public bool ExemptPrae { get; set; }
     public bool ExemptCastrum { get; set; }
     public bool ExemptPorta { get; set; }
@@ -86,10 +86,6 @@ public sealed class SkippyConfig
 
     /// <summary>在切换开关时于界面底部显示提示信息。</summary>
     public bool ShowToasts { get; set; } = true;
-
-    /// <summary>上次导入 Dalamud 配置的时间，避免重复提示。</summary>
-    public DateTimeOffset? LastConfigImportUtc { get; set; }
-
     /// <summary>UI 上次选中的页面标识。</summary>
     public string LastPage { get; set; } = "MSQRoulette";
 
@@ -192,8 +188,8 @@ public sealed class SkippyConfig
         this.GamePath = other.GamePath;
         this.MinimizeToTray = other.MinimizeToTray;
         this.ShowToasts = other.ShowToasts;
-        this.LastConfigImportUtc = other.LastConfigImportUtc;
         this.LastPage = other.LastPage;
     }
 }
+
 

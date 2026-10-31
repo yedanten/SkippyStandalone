@@ -5,6 +5,47 @@ namespace Skippy.Core.Tests;
 public class ConfigTests
 {
     [Fact]
+    public void DefaultConfig_DisablesEverySkipCategory()
+    {
+        var config = new SkippyConfig();
+
+        // 总开关默认开启，但首次运行时不应有任何跳过功能被启用。
+        Assert.True(config.IsEnabled);
+
+        Assert.False(config.SkipMSQRoulette);
+        Assert.False(config.ExemptPrae);
+        Assert.False(config.ExemptCastrum);
+        Assert.False(config.ExemptPorta);
+
+        Assert.False(config.SkipMassivePC);
+        Assert.False(config.SkipCosmicExploration);
+
+        Assert.False(config.SkipGoldSaucer);
+        Assert.False(config.ExemptChocoboRace);
+        Assert.False(config.ExemptVerminion);
+        Assert.False(config.ExemptTripleTriad);
+        Assert.False(config.ExemptFallGuys);
+        Assert.False(config.ExemptAirForceOne);
+        Assert.False(config.ExemptMahjong);
+
+        Assert.False(config.SkipCustomTalk);
+        Assert.False(config.ExemptSubmarines);
+        Assert.False(config.SkipNormalCutscenes);
+        Assert.False(config.SkipFeedBuddy);
+
+        Assert.False(config.SkipOceanFishing);
+        Assert.False(config.SkipCrystallineConflict);
+        Assert.False(config.SkipInn);
+
+        Assert.False(config.AutoEnable4Man);
+        Assert.False(config.CheckPartySkippy);
+        Assert.False(config.AllowCutsceneSeenGlobally);
+
+        Assert.False(config.DevMode);
+        Assert.False(config.ResearchMSQHook);
+    }
+
+    [Fact]
     public void AutoPartyModeClearsManualMsqSettings()
     {
         var config = new SkippyConfig
@@ -119,7 +160,7 @@ public class ConfigTests
             var store = new ConfigStore(path);
             var config = store.Load();
 
-            Assert.True(config.SkipMSQRoulette);
+            Assert.False(config.SkipMSQRoulette);
             Assert.NotNull(store.LastError);
         }
         finally
@@ -129,3 +170,4 @@ public class ConfigTests
         }
     }
 }
+

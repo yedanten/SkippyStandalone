@@ -34,11 +34,15 @@ public class TerritoryRulesTests
     [Fact]
     public void MsqSkipSemanticsFollowGlobalToggle()
     {
-        var skipAll = Config();
+        var skipAll = Config(c => c.SkipMSQRoulette = true);
         Assert.True(TerritoryRules.MsqSkipsIn(1044, skipAll));
         Assert.True(TerritoryRules.MsqSkipsIn(1043, skipAll));
 
-        var exempt = Config(c => c.ExemptPrae = true);
+        var exempt = Config(c =>
+        {
+            c.SkipMSQRoulette = true;
+            c.ExemptPrae = true;
+        });
         Assert.False(TerritoryRules.MsqSkipsIn(1044, exempt));
         Assert.True(TerritoryRules.MsqSkipsIn(1043, exempt));
 
@@ -108,3 +112,4 @@ public class TerritoryRulesTests
         Assert.False(TerritoryRules.IsRiskyTerritory(TerritoryIntendedUse.Overworld, config, out _));
     }
 }
+

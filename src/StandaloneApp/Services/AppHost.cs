@@ -118,17 +118,14 @@ public sealed class AppHost : IDisposable
 
     private SkippyConfig LoadConfig()
     {
+        // 只读取 SkippyStandalone 自己的配置文件。首次运行时使用默认值
+        // （所有跳过类别默认关闭），不会读取或继承 Dalamud 插件的配置。
         var config = this.Store.Load();
 
         if (!File.Exists(this.Store.FilePath))
         {
-            var imported = DalamudConfigImporter.TryImport();
-            if (imported.Success && imported.Config is not null)
-            {
-                DalamudConfigImporter.MergeSkipSettings(config, imported.Config);
-                this.Store.Save(config);
-                this.Logger.Info($"已从原 Dalamud 插件导入配置：{imported.SourcePath}");
-            }
+            this.Store.Save(config);
+            this.Logger.Info("未找到配置文件，已创建默认配置（所有跳过类别默认关闭）。");
         }
 
         config.Normalize();

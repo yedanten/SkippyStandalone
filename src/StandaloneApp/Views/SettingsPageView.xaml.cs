@@ -20,6 +20,13 @@ public partial class SettingsPageView : UserControl
         var model = SettingsPageBuilder.Build(category, host, autoParty);
 
         this.BuildPage(model);
+
+        // 与原插件一致：总开关关闭时，分类内容不可编辑，但帮助提示仍然可见。
+        if (!host.Config.IsEnabled)
+        {
+            ToolTipService.SetShowOnDisabled(this.PageContent, true);
+            this.PageContent.IsEnabled = false;
+        }
     }
 
     private void BuildPage(SettingsPageModel model)

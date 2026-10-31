@@ -25,7 +25,7 @@
 
 - **Auto-Party Mode**：进入 MSQ 副本地域时自动启用 MSQ 跳过，离开后自动恢复；可选“全队都装了 Skippy 才启用”的匿名队伍检测。
 - **开发者模式**：通过作者提供的密码解锁 Hook Research 页，逐个测试签名 hook。
-- **配置导入**：首次启动自动读取原 Dalamud 插件留下的 `Skippy.json`。
+- **默认安全**：首次运行不启用任何跳过类别；只读写 `%APPDATA%\SkippyStandalone\config.json`，不会读取或继承 Dalamud 插件配置。
 - **日志与诊断**：一键把日志导出到桌面；匿名 User ID；Tester 徽章。
 - **安全恢复**：宿主心跳超时（游戏侧 5 秒）或程序正常退出时，原生组件都会写回原始字节、移除 hook。
 
@@ -124,7 +124,7 @@ dotnet run --project tools/TerritoryDump -- --game "E:\最终幻想XIV" `
 ```
 src/
 ├── Skippy.Core/            纯逻辑与跨进程基础设施
-│   ├── Configuration/      配置模型、持久化、Dalamud 配置导入
+│   ├── Configuration/      配置模型、持久化
 │   ├── Skips/              地域规则与跳过决策引擎（逐条移植自原插件）
 │   ├── Interop/            共享内存布局与通道
 │   ├── Game/               进程发现、注入、原生库释放
@@ -141,7 +141,7 @@ src/
     ├── Services/           AppHost（组合根）、GameMonitor（注入与日志）
     └── Themes/             深色 ImGui 风格主题
 
-tests/Skippy.Core.Tests/    52 个单元测试
+tests/Skippy.Core.Tests/    53 个单元测试
 tools/
 ├── build.ps1               一键构建
 ├── SignatureProbe/         离线签名验证
@@ -192,4 +192,6 @@ third_party/minhook/        MinHook（BSD-2-Clause，vendored）
 - 原插件 Skippy：AGPL-3.0-or-later（Copyright Boxu）
 - 本移植：AGPL-3.0-or-later
 - MinHook：BSD-2-Clause（`third_party/minhook/LICENSE.txt`）
+
+
 
