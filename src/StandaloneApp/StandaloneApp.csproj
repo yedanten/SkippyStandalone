@@ -19,6 +19,9 @@
     <Description>Standalone port of the Skippy Dalamud plugin for FINAL FANTASY XIV.</Description>
     <Company>Boxu / standalone port</Company>
     <Copyright>© Boxu - 2026 | Standalone v2.2.5.0</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/yedanten/SkippyStandalone</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
 
     <SatelliteResourceLanguages>zh-Hans</SatelliteResourceLanguages>
     <ApplicationManifest>app.manifest</ApplicationManifest>

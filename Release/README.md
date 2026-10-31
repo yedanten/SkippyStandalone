@@ -1,7 +1,14 @@
 # Skippy 独立版
 
+[English README](https://github.com/yedanten/SkippyStandalone/blob/main/README.md) | 简体中文
+
 将 FFXIV 卫月（Dalamud）插件 **Skippy 2.2.5.0** 移植为独立运行的 Windows 单文件程序。
 不依赖卫月本体、插件加载器或 .NET 运行时。
+
+- 项目地址：https://github.com/yedanten/SkippyStandalone
+- 下载地址：https://github.com/yedanten/SkippyStandalone/releases/latest
+- 原始插件：https://github.com/BoxuChan/Skippy
+- 卫月项目：https://github.com/goatcorp/Dalamud
 
 ## 功能
 
@@ -39,7 +46,7 @@
 pwsh -File tools/build.ps1
 ```
 
-产物输出到 `Release/StandaloneApp.exe`。详细步骤、项目结构与架构说明见仓库根目录 `README.md`。
+产物输出到 `Release/StandaloneApp.exe`。详细步骤、项目结构与架构说明见仓库根目录 `README.md` / `README.zh-CN.md`。
 
 ## 注意事项
 
@@ -49,4 +56,7 @@ pwsh -File tools/build.ps1
 
 ## 许可
 
-AGPL-3.0-or-later（沿用原插件 Skippy，Copyright Boxu）。
+MIT License（见仓库根目录 `LICENSE`）。
+
+原始插件 Skippy（Copyright Boxu）采用 AGPL-3.0-or-later；卫月 Dalamud 同样为 AGPL-3.0-or-later；
+MinHook 为 BSD-2-Clause。所有第三方版权归其各自作者所有。
