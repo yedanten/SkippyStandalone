@@ -21,3 +21,7 @@ artifacts/
 # 本地工具/临时文件
 /.scratch/
 *.log
+
+# 本地工作说明（不公开）
+/AGENTS.md
+
